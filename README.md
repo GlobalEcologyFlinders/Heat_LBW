@@ -24,6 +24,10 @@ Main steps:
 - province-level estimates of the heat-related attributable fraction derived using weighted coefficients;  
 - for policy implications and targeted interventions, we combined province-level estimates with district-level health and environmental indicators (e.g., live births, child mortality, poverty index, and heat index) to calculate a district-level **heat vulnerability index**;  
 - subgroups of women at the population level with higher risk of heat-related low birth weights identified.  
+
+## Scripts
+- <code>main_analysis.R</code>: main R code for running models
+- <code>LowBirthWeightFigs.R</code>: R code to prepare data for figures in paper
 <br>
 <br>
 <p><a href="https://www.flinders.edu.au"><img align="bottom-left" src="www/Flinders_University_Logo_Stacked_RGB_Master.png" alt="Flinders University" width="90" style="margin-top: 20px"></a> &nbsp; <a href="https://globalecologyflinders.com"><img align="bottom-left" src="www/GEL Logo Kaurna New Transp.png" alt="GEL" width="85" style="margin-top: 20px"></a> &nbsp; &nbsp; <a href="https://github.com/FutureChildHealth"><img align="bottom-left" src="www/FCHlogo06122024transp.png" alt="Future Child Health" width="90" style="margin-top: 20px"></a> &nbsp; &nbsp; <a href="https://www.sickkids.ca"><img align="bottom-left" src="www/sickkids-logo.webp" alt="Hospital for Sick Children" width="120" style="margin-top: 20px"></a> &nbsp; &nbsp; <a href="https://www.adelaide.edu.au/"><img align="bottom-left" src="www/UAlogo.png" alt="U Adelaide" width="90" style="margin-top: 20px"></a> &nbsp; &nbsp; <a href="https://www.aku.edu/"><img align="bottom-left" src="www/agakhanlogo.png" alt="Aga Khan University" width="90" style="margin-top: 20px"></a> &nbsp; &nbsp; <a href="https://www.ualberta.ca/"><img align="bottom-left" src="www/UAlblogo.png" alt="U Alberta" width="90" style="margin-top: 20px"></a></p>
