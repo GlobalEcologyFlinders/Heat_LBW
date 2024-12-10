@@ -31,8 +31,7 @@ Key steps:
 **Prof. Corey J. A. Bradshaw**  
 [Global Ecology | Partuyarta Ngadluku Wardli Kuu, Flinders University, Adelaide, Australia](https://globalecologyflinders.com/people/#DIRECTOR)  
 *Email: corey.bradshaw@flinders.edu.com*  
-
-### Project Collaborators  
+ 
 - **Assoc. Prof. Zohra Lassi**  
   [Research Profile](https://researchers.adelaide.edu.au/profile/zohra.lassi)  
 - **Prof. Zulfiqar Ali Bhutta**  
