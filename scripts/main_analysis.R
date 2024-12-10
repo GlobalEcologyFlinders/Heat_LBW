@@ -25,7 +25,6 @@ library(sf)
 library(weathermetrics)
 library(readr)
 library(viridis)
-library(sf)
 library(patchwork)
 library(here)
 
