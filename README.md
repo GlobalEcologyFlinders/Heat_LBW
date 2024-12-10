@@ -17,22 +17,18 @@ Main steps:
 <br>
 
 ## Collaborators  
-- Dr Syeda Hira Fatima
-[Global Ecology | Partuyarta Ngadluku Wardli Kuu, Flinders University, Adelaide, Australia](https://globalecologyflinders.com/people/#SHF)  
-*Email: syeda.fatima@flinders.edu.au*  
-- Professor Corey J. A. Bradshaw**  
+- Dr Syeda Hira Fatima, [Global Ecology | Partuyarta Ngadluku Wardli Kuu, Flinders University, Adelaide, Australia](https://globalecologyflinders.com/people/#SHF), *Email: syeda.fatima@flinders.edu.au*  
+- Professor Corey J. A. Bradshaw
 [Global Ecology | Partuyarta Ngadluku Wardli Kuu, Flinders University, Adelaide, Australia](https://globalecologyflinders.com/people/#DIRECTOR)  
-*Email: corey.bradshaw@flinders.edu.com*  
- 
-- **Assoc. Prof. Zohra Lassi**  
+*Email: corey.bradshaw@flinders.edu.com*
+- Associate Professor Zohra Lassi
   [Research Profile](https://researchers.adelaide.edu.au/profile/zohra.lassi)  
-- **Prof. Zulfiqar Ali Bhutta**  
+- Professor Zulfiqar Ali Bhutta
   [Research Profile](https://www.sickkids.ca/en/staff/b/zulfiqar-bhutta/)  
-- **Prof. Peng Bi**  
+- Professor Peng Bi
   [Research Profile](https://researchers.adelaide.edu.au/profile/peng.bi)  
-- **Dr. Jai Das**  
+- Dr Jai Das
   [Research Profile](https://www.aku.edu/mcpk/faculty/Pages/profile.aspx?ProfileID=307&Name=Jai++Das)  
-- **Assoc. Prof. Salima MeherAli**  
+- Associate Professor Salima MeherAli
   [Research Profile](https://apps.ualberta.ca/directory/person/meherali)  
-
----
+<br>
