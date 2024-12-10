@@ -1,9 +1,15 @@
+########################################
+# Heat Vulnerability and Low Birth Weight (LBW) Analysis
+########################################
+# This script analyzes the impacts of temperature, air quality, and socioeconomic factors on LBW
+# across provinces in Pakistan. It includes data preprocessing, modeling, visualization, and
+# subgroup analysis.
+########################################
 
-#####################################
-Loading necessary libraries
-#####################################
-
-# Load necessary libraries
+########################################
+# Loading Necessary Libraries
+########################################
+# Load required R libraries
 library(data.table)
 library(dplyr)
 library(lubridate)
@@ -21,17 +27,23 @@ library(readr)
 library(viridis)
 library(sf)
 library(patchwork)
+library(here)
 
+########################################
+# Define File Paths (Dynamic for Portability)
+########################################
+# Set file paths using the `here` package for portability
+LBW_file <- here("data", "Final_LBW_data.csv")
+population_file <- here("data", "population_data_prov.csv")
+precipitation_file <- here("data", "province_precipitation.csv")
 
 ########################################
 # STAGE 1: DATA PREPROCESSING
 ###################################
-
-# Set working directory
-setwd("/Users/fati0049/Desktop/My_data_2024/Research/Zohra1/Rcode/analysis_paper2/Rcode")
+# This stage preprocesses the LBW data, handles missing values, and scales environmental variables.
 
 # Load data
-LBW <- fread("Final_LBW_data.csv", header = TRUE) %>%
+LBW <- fread(LBW_file, header = TRUE) %>%
   rename(province = Region)
 
 # Ensure the date column is in Date format
@@ -91,7 +103,7 @@ imputation_methods["Wealth_Index"] <- "polyreg"
 imputation_methods["Mother_Age_Group"] <- "polyreg"
 
 # Perform multiple imputations
-set.seed(123)  # Set a seed for reproducibility
+set.seed(123)  # for reproducibility
 imputed <- mice(impute_data, method = imputation_methods, m = 5)
 
 # Extract the completed dataset (first imputed dataset)
@@ -112,13 +124,8 @@ summary(LBW_clean)
 LBW_clean <- LBW_clean %>%
   arrange(province, date)
 
-
-
-library(data.table)
-library(dplyr)
-
 # Step 1: Load province-level precipitation data
-province_precipitation <- fread("/Users/fati0049/Desktop/My_data_2024/Research/Processed_env_data/Rcode/province_precipitation.csv", header = TRUE)
+province_precipitation <- fread(precipitation_file, header = TRUE)
 
 # Ensure the date column is in Date format
 province_precipitation$date <- as.Date(province_precipitation$date)
@@ -172,8 +179,6 @@ scaled_medians <- LBW_clean %>%
 
 print(scaled_medians)
 
-
-
 # Save the LBW_clean dataset as a CSV file
 write.csv(LBW_clean, "LBW_clean.csv", row.names = FALSE)
 
@@ -184,11 +189,11 @@ cat("The LBW_clean dataset has been successfully saved as 'LBW_clean.csv'.\n")
 
 
 ###############################################
-#STAGE 2: MODELING PARAMETERS 
+#STAGE 2: MODELING
 ############################################
+# This stage fits GLMM models with distributed lag nonlinear modeling (DLNM).
 
-
-# Lag and polynomial degrees
+# Define lag and polynomial degrees
 lag <- 7
 degree_exposure <- 2
 degree_lag <- 1
@@ -423,9 +428,9 @@ ggsave("Combined_Exposure_Response_Original_Scale.png", combined_plot, width = 1
 print(combined_plot)
 
 ##########################
-#STAGE 3: RUNNING ALL MODELING AND ESTIMATING WEIGHTAGES
+#STAGE 3: RUNNING ALL MODELS AND ESTIMATING WEIGHTAGES
 ########################
-
+# THis step estiamtes weighted coefficients and variance-covariance matrices and province-level predicitons with scaled variables
 
 
 
@@ -690,18 +695,25 @@ print(final_combined_plot)
 ########################
 #STAGE 4: ATTRIBUTABLE FRACTION
 #######################
+# This step esitamtes baseline and projected AF
+                                       
+# Define paths for the datasets
+LBW_clean_path <- here("data", "LBW_clean.csv")
+prov_RCP4.5_48_path <- here("data", "prov_RCP4.5_48.csv")
+prov_RCP8.5_48_path <- here("data", "prov_RCP8.5_48.csv")
+prov_RCP4.5_68_path <- here("data", "prov_RCP4.5_68.csv")
+prov_RCP8.5_68_path <- here("data", "prov_RCP8.5_68.csv")
 
+# Read the datasets
+LBW_clean <- read.csv(LBW_clean_path)         # Baseline dataset
+prov_RCP4.5_48 <- read.csv(prov_RCP4.5_48_path)  # RCP 4.5 (2048-2057)
+prov_RCP8.5_48 <- read.csv(prov_RCP8.5_48_path)  # RCP 8.5 (2048-2057)
+prov_RCP4.5_68 <- read.csv(prov_RCP4.5_68_path)  # RCP 4.5 (2068-2077)
+prov_RCP8.5_68 <- read.csv(prov_RCP8.5_68_path)  # RCP 8.5 (2068-2077)
 
+                                       
 # Set a random seed for reproducibility
 set.seed(123)
-
-
-# Load datasets
-#LBW_clean <- read.csv("LBW_clean.csv")  # Baseline dataset
-prov_RCP4.5_48 <- read.csv("prov_RCP4.5_48.csv")  # RCP 4.5 (2048-2057)
-prov_RCP8.5_48 <- read.csv("prov_RCP8.5_48.csv")  # RCP 8.5 (2048-2057)
-prov_RCP4.5_68 <- read.csv("prov_RCP4.5_68.csv")  # RCP 4.5 (2068-2077)
-prov_RCP8.5_68 <- read.csv("prov_RCP8.5_68.csv")  # RCP 8.5 (2068-2077)
 
 # Ensure date column is in Date format for all datasets
 LBW_clean$date <- as.Date(LBW_clean$date)
@@ -1022,16 +1034,13 @@ ggsave(filename = "Figure2_proj_AF_plot_updated.png", plot = combined_plot, widt
 
 
 
-
-
-
 ################################
-#STAGE 5: SNESIVITY ANALYSIS TO COMPARE MEAN ADN MEDIAN TEMPERATURE
+#STAGE 5: SENSITIVITY ANALYSIS TO COMPARE MEAN ADN MEDIAN TEMPERATURE
 ###########################
-
-# Load necessary library
-library(dplyr)
-
+# This step include some sensitvity analysis to further support our modeling choices for example selection of median temperature as centering value                                       
+# Define data path
+LBW_clean_path <- here("data", "LBW_clean.csv")
+                                       
 # Ensure the data is loaded
 LBW_clean <- read.csv("LBW_clean.csv")
 
@@ -1146,9 +1155,16 @@ print(final_comparison_plot)
 #########################
 #STAGE 6: HEAT VULNERABLILITY INDEX
 #########################
+#THis stpe generate heat vulnerability index
 
+# Define the path dynamically
+dist_births_path <- here("data", "dist_births_mor_mpi.csv")
+shapefile_path <- here("data", "shapefiles", "pak_admbnda_adm2_wfp_20220909.shp")
+province_shapefile_path <- here("data", "shapefiles", "pak_admbnda_adm1_wfp_20220909.shp")
 
-dist_births <- fread("/Users/fati0049/Desktop/My_data_2024/Research/Zohra1/Rcode/analysis/dist_births_mor_mpi.csv")
+# Read the file
+dist_births <- fread(dist_births_path)
+                                       
 # Specify the columns to keep
 columns_to_keep <- c("ADM2_EN", "ADM1_EN.x", 
                      "avg_pm", "avg_tmean", "avg_heat_index", 
@@ -1170,7 +1186,8 @@ numeric_vars <- c("avg_pm", "avg_tmean", "avg_heat_index", "avg_humidity", "avg_
 merged_data <- merged_data %>%
   mutate(across(all_of(numeric_vars), ~ scale(.x, center = TRUE, scale = TRUE)))
 
-# Step 3: Monte Carlo Simulation for HVI
+# Monte Carlo Simulation for HVI
+                                       
 set.seed(123)  # For reproducibility
 num_samples <- 1000  # Number of Monte Carlo simulations
 
@@ -1181,11 +1198,11 @@ rr_samples <- lapply(1:num_samples, function(i) {
 
 # Define weights for HVI factors
 weight_temperature <- 0.20
-weight_pm <- 0.10
+weight_pm <- 0.20
 weight_IHME <- 0.20
 weight_mpi <- 0.20
 weight_rr <- 0.20
-weight_other <- 0.10
+
 
 # Calculate HVI for each simulation
 for (i in 1:num_samples) {
@@ -1200,16 +1217,20 @@ for (i in 1:num_samples) {
 }
 
 
-# Step 4: Calculate Mean HVI Across Simulations
+# Calculate Mean HVI Across Simulations
 # Calculate mean HVI across all simulation columns
 hvi_data <- merged_data %>%
   mutate(mean_HVI = rowMeans(across(starts_with("HVI_")), na.rm = TRUE)) %>%  # Compute mean HVI
   dplyr::select(ADM2_EN, mean_HVI)  # Keep only ADM2_EN and mean_HVI
 
+# Check if the file exists
+if (!file.exists(shapefile_path)) {
+  stop("Shapefile not found: ", shapefile_path)
+}
 
+# Read the shapefile
+districts_shapefile <- st_read(shapefile_path)
 
-# Specify the columns to remove
-districts_shapefile <- st_read("/Users/fati0049/Desktop/My_data_2024/Research/Zohra1/Rcode/analysis/pak_adm_wfp_20220909_shp/pak_admbnda_adm2_wfp_20220909.shp")
 #connect back to shapefile
 district_data <- merge(districts_shapefile, hvi_data, by.x = "ADM2_EN", by.y = "ADM2_EN", all.x = TRUE)
 #connect back to other env variables
@@ -1231,14 +1252,11 @@ colnames(final_district_data)
 #######################
 
 
-
-
 # Ensure the dataset is in sf format
 final_district_data <- st_as_sf(final_district_data)
 
-# Load province-level shapefile (if available)
-province_shapefile <- st_read("/Users/fati0049/Desktop/My_data_2024/Research/Zohra1/Rcode/analysis/pak_adm_wfp_20220909_shp/pak_admbnda_adm1_wfp_20220909.shp")
-
+# Read the shapefile
+province_shapefile <- st_read(province_shapefile_path)
 # Add Province Boundaries
 province_boundaries <- st_as_sf(province_shapefile)
 
@@ -1295,7 +1313,6 @@ ggsave(
 
 # Display the updated map
 print(hvi_plot)
-
 
 
 # Smaller environmental variable plots
