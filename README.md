@@ -1,7 +1,7 @@
 # Assessing the impacts of heat on low birth weight: evidence from low- and middle-income countries  
 
 ## Data  
-This repository contains the code and documentation for analysing national datasets from [Demographic Health Surveys](https://dhsprogram.com) and [Multiple Indicator Cluster Surveys] (https://mics.unicef.org/surveys), merged with geospatial gridded meteorological data from [ERA5-Land](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land-monthly-means?tab=overview), to assess the impacts of hot weather conditions on low birth weight in Pakistan. This study is the most comprehensive assessment of heat impacts on low birth weights for low- and middle-income countries.
+This repository contains the code and documentation for analysing national datasets from [Demographic Health Surveys](https://dhsprogram.com) and [Multiple Indicator Cluster Surveys](https://mics.unicef.org/surveys), merged with geospatial gridded meteorological data from [ERA5-Land](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land-monthly-means?tab=overview), to assess the impacts of hot weather conditions on low birth weight in Pakistan. This study is the most comprehensive assessment of heat impacts on low birth weights for low- and middle-income countries.
 
 ## Methodological overview  
 We used a flexible modelling approach to account for uncertainties and spatio-temporally sparse data by applying distributed-lag nonlinear models within a space-time series study design. We employed generalised linear mixed-effects models with random intercepts to account for provincial-level variation and to explore delayed and nonlinear associations between ambient temperatures and low birth weight.  
