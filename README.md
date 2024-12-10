@@ -24,3 +24,6 @@ Main steps:
 - province-level estimates of the heat-related attributable fraction derived using weighted coefficients;  
 - for policy implications and targeted interventions, we combined province-level estimates with district-level health and environmental indicators (e.g., live births, child mortality, poverty index, and heat index) to calculate a district-level **heat vulnerability index**;  
 - subgroups of women at the population level with higher risk of heat-related low birth weights identified.  
+<br>
+<br>
+<p><a href="https://www.flinders.edu.au"><img align="bottom-left" src="www/Flinders_University_Logo_Horizontal_RGB_Master.png" alt="Flinders University" width="150" style="margin-top: 20px"></a> &nbsp; <a href="https://globalecologyflinders.com"><img align="bottom-left" src="www/GEL Logo Kaurna New Transp.png" alt="GEL" width="85" style="margin-top: 20px"></a> &nbsp; &nbsp; <a href="https://www.uwa.edu.au/"><img align="bottom-left" src="www/uwa2.png" alt="UWA" width="100" style="margin-top: 20px"></a> &nbsp; &nbsp; <a href="https://www.telethonkids.org.au"><img align="bottom-left" src="www/tkilogo.png" alt="TKI" width="90" style="margin-top: 20px"></a> &nbsp; &nbsp; <a href="https://github.com/FutureChildHealth"><img align="bottom-left" src="www/FCHlogo06122024transp.png" alt="Future Child Health" width="90" style="margin-top: 20px"></a></p>
