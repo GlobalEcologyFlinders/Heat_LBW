@@ -2,7 +2,7 @@
 <img align="right" src="www/low birth weight transp.png" alt="low birth weight" width="200" style="margin-top: 20px">
 
 **Lead investigator**
-- Dr Syeda Hira Fatima, [Global Ecology | <em>Partuyarta Ngadluku Wardli Kuu</em>, Flinders University, Adelaide, Australia](https://globalecologyflinders.com/people/#SHF), *Email: syeda.fatima@flinders.edu.au*  
+- Dr [Syeda Hira Fatima](https://globalecologyflinders.com/people/#SHF), Global Ecology | <em>Partuyarta Ngadluku Wardli Kuu</em>, Flinders University, Adelaide, Australia, [Email](mailto:syeda.fatima@flinders.edu.au)  
 
 **Collaborators**
 - Professor [Corey J. A. Bradshaw](https://globalecologyflinders.com/people/#DIRECTOR), Global Ecology | <em>Partuyarta Ngadluku Wardli Kuu</em>, Flinders University, Adelaide, Australia, [Email](mailto:corey.bradshaw@flinders.edu.com)
