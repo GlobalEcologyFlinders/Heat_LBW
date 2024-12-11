@@ -10,7 +10,7 @@
 - Professor [Zulfiqar Ali Bhutta](https://www.sickkids.ca/en/staff/b/zulfiqar-bhutta/)
 - Professor [Peng Bi](https://researchers.adelaide.edu.au/profile/peng.bi)
 - Dr [Jai K. Das](https://www.aku.edu/mcpk/faculty/Pages/profile.aspx?ProfileID=307&Name=Jai++Das)
-- Associate Professor [Salima MeherAli][Research Profile](https://apps.ualberta.ca/directory/person/meherali)<br>
+- Associate Professor [Salima MeherAli](https://apps.ualberta.ca/directory/person/meherali)<br>
 <br>
 accompanies paper:<br>
 <br>
