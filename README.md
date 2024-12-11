@@ -1,6 +1,5 @@
-<a href="https://doi.org/10.5281/zenodo.14373384"><img src="https://zenodo.org/badge/901043376.svg" alt="DOI"></a>
-
 # Assessing the impacts of heat on low birth weight: evidence from low- and middle-income countries  
+<a href="https://doi.org/10.5281/zenodo.14373384"><img src="https://zenodo.org/badge/901043376.svg" alt="DOI"></a>
 <img align="right" src="www/low birth weight transp.png" alt="low birth weight" width="200" style="margin-top: 20px">
 
 **Lead investigator**
