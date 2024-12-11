@@ -5,7 +5,7 @@
 - Dr Syeda Hira Fatima, [Global Ecology | <em>Partuyarta Ngadluku Wardli Kuu</em>, Flinders University, Adelaide, Australia](https://globalecologyflinders.com/people/#SHF), *Email: syeda.fatima@flinders.edu.au*  
 
 **Collaborators**
-- Professor Corey J. A. Bradshaw, [Global Ecology | <em>Partuyarta Ngadluku Wardli Kuu</em>, Flinders University, Adelaide, Australia](https://globalecologyflinders.com/people/#DIRECTOR), *Email: corey.bradshaw@flinders.edu.com*
+- Professor [Corey J. A. Bradshaw](https://globalecologyflinders.com/people/#DIRECTOR), Global Ecology | <em>Partuyarta Ngadluku Wardli Kuu</em>, Flinders University, Adelaide, Australia, *[Email](mailto:corey.bradshaw@flinders.edu.com)*
 - Associate Professor Zohra Lassi, [Research Profile](https://researchers.adelaide.edu.au/profile/zohra.lassi)  
 - Professor Zulfiqar Ali Bhutta, [Research Profile](https://www.sickkids.ca/en/staff/b/zulfiqar-bhutta/)  
 - Professor Peng Bi, [Research Profile](https://researchers.adelaide.edu.au/profile/peng.bi)  
